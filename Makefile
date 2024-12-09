@@ -16,14 +16,15 @@ dependencies:
 		libgbm-dev \
 		libfreetype6-dev
 
-all: 
+release: 
 	cmake -B build -DCMAKE_BUILD_TYPE=Release
 	cmake --build build --config Release
 	./build/bin/main
 
-build-cmake: 
-	cmake -B build -DCMAKE_BUILD_TYPE=Release
-	cmake --build build --config Release
 
+debug: 
+	cmake -B build -DCMAKE_BUILD_TYPE=Debug
+	cmake --build build --config Debug
+	./build/bin/main
 run: 
 	./build/bin/main
